@@ -40,6 +40,11 @@ public class Main {
 		Integer anInt = 123;
 		System.out.println("The integer is: "+anInt.toString());
 		
+		Human2 peter2 = new Human2("Peter", 10, Gender.Male);
+		
+		System.out.println(peter == peter2);
+		System.out.println(peter.equals(peter2));
+		
 		
 	}
 
