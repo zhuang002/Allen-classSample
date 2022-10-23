@@ -1,8 +1,8 @@
 
 public class Human1 {
-	public String name;
-	public int age;
-	public Gender gender;
+	private String name;
+	private int age;
+	private Gender gender;
 	
 	private int locX;
 	private int locY;
@@ -21,6 +21,31 @@ public class Human1 {
 		this.locY = 0;
 	}
 	
+	// getter/setter
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+		
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
 	public void walk(int distance, Direction direction) {
 		if (direction == Direction.North) {
 			this.locY+=distance;
@@ -43,6 +68,11 @@ public class Human1 {
 	
 	public void talk(String words) {
 		System.out.println(name + " talked \"" + words + "\"");
+	}
+
+	public String getInfo() {
+		// TODO Auto-generated method stub
+		return "name:"+this.name+";age:"+this.age+";gender:"+this.gender;
 	}
 	
 	
