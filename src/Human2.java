@@ -1,6 +1,6 @@
 
-public class Human2 extends Mamal {
-	private String name;
+public class Human2 extends Mamal implements Comparable {
+	protected String name;
 
 	
 	public Human2(String name, int age, Gender gender) {
@@ -52,6 +52,15 @@ public class Human2 extends Mamal {
 		Human2 other = (Human2) obj;
 		
 		return this.name.equals(other.name) && this.age == other.age && this.gender == other.gender;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		if (o == null) return 1;
+		Human2 other = (Human2)o;
+		return this.name.compareTo(other.name);
+
 	}
 	
 	

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Main {
 
@@ -45,6 +48,38 @@ public class Main {
 		System.out.println(peter == peter2);
 		System.out.println(peter.equals(peter2));
 		
+		ArrayList<Human2> peoples = new ArrayList<>();
+		peoples.add(peter);
+		peoples.add(helen);
+		peoples.add(new Human2("David",15, Gender.Male));
+		peoples.add(new Human2("Alice", 8, Gender.Female));
+		peoples.add(new Human2("Derek", 20, Gender.Male));
+		
+		Collections.sort(peoples);
+		
+		for (Human2 people:peoples) {
+			System.out.println(people);
+		}
+		
+		System.out.println("=====");
+		
+		//lambda expression
+		Collections.sort(peoples, (x, y) -> x.age - y.age);
+		for (Human2 people:peoples) {
+			System.out.println(people);
+		}
+		System.out.println("=====");
+		
+		peoples.add(new Human2("Peter", 2, Gender.Male));
+		Collections.sort(peoples, (x, y) -> {
+			int comp = x.name.compareTo(y.name);
+			if (comp!=0) return comp;
+			return x.age - y.age;
+			
+		});
+		for (Human2 people:peoples) {
+			System.out.println(people);
+		}
 		
 	}
 
